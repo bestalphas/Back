@@ -6,6 +6,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import java.time.LocalDate;
 import java.util.Optional;
 
+import org.apache.catalina.connector.Response;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,6 +16,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import com.example.mall.domain.Todo;
+import com.example.mall.dto.PageRequestDTO;
+import com.example.mall.dto.PageResponseDTO;
 import com.example.mall.dto.TodoDTO;
 import com.example.mall.repository.TodoRepository;
 import com.example.mall.service.TodoService;
@@ -70,13 +73,21 @@ class MallApplicationTests {
 //
 //		Long tno = todoService.register(todoDTO);
 //		log.info("글 번호 : " + tno);
-		
-		Long tno = 2L;
-		
-		TodoDTO todoDTO = todoService.get(tno);
-		
-		log.info(todoDTO);
-		
+//		
+//		Long tno = 2L;
+//		
+//		TodoDTO todoDTO = todoService.get(tno);
+//		
+//		log.info(todoDTO);
+//		
+//		
+//		PageRequestDTO pageRequestDTO = PageRequestDTO.builder()
+//				.page(2)
+//				.size(10)
+//				.build();
+//				
+//		PageResponseDTO<TodoDTO> = todoService.list(pageRequestDTO);
+//		log.info(Response);		
 		
 		
 		
