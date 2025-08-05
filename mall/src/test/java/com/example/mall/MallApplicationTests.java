@@ -36,9 +36,9 @@ class MallApplicationTests {
 
 	@Test
 	void contextLoads() {
-		log.info("-".repeat(20));
-		log.info(todoRepository);
-		log.info("-".repeat(20));
+//		log.info("-".repeat(20));
+//		log.info(todoRepository);
+//		log.info("-".repeat(20));
 //		
 //		for(int i = 1 ; i <= 100 ; i++) {
 //			Todo todo = Todo.builder()
@@ -47,7 +47,7 @@ class MallApplicationTests {
 //					.dueDate(LocalDate.now())
 //					.build();
 //			
-//			todoRepository.save(todo);
+//			todoRepository.save(todo);}
 //		Long tno = 1L;
 //		
 //		Optional<Todo> result =	todoRepository.findById(tno);
