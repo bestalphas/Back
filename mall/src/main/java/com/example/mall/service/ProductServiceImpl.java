@@ -142,4 +142,8 @@ public class ProductServiceImpl implements ProductService {
 		return PageResponseDTO.<ProductDTO>withAll().dtoList(dtoList).totalCount(totalCount)
 				.pageRequestDTO(pageRequestDTO).build();
 	}
+	
+	public void remove(Long pno) {
+		productRepository.updateToDelete(pno, true);
+	}
 }
