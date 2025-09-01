@@ -10,7 +10,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.example.mall.domain.Product;
 import com.example.mall.domain.ProductImage;
@@ -19,13 +18,14 @@ import com.example.mall.dto.PageResponseDTO;
 import com.example.mall.dto.ProductDTO;
 import com.example.mall.repository.ProductRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
 @Service
 @Log4j2
 @RequiredArgsConstructor
-@jakarta.transaction.Transactional
+@Transactional
 public class ProductServiceImpl implements ProductService {
 
 	private final ProductRepository productRepository;
