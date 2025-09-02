@@ -22,6 +22,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import com.example.mall.security.filter.JWTCheckFilter;
 import com.example.mall.security.handler.APILoginFailHandler;
 import com.example.mall.security.handler.APILoginSuccessHandler;
+import com.example.mall.security.handler.CustomAccessDeniedHandler;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -56,6 +57,9 @@ public class CustomSecurityConfig {
 		
 		http.addFilterBefore(new JWTCheckFilter(), UsernamePasswordAuthenticationFilter.class);
 		
+		http.exceptionHandling(config ->{
+			config.accessDeniedHandler(new CustomAccessDeniedHandler());
+		});
 		return http.build();
 	}
 	
