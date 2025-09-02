@@ -17,6 +17,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import com.example.mall.security.handler.APILoginFailHandler;
 import com.example.mall.security.handler.APILoginSuccessHandler;
 
 import jakarta.servlet.ServletException;
@@ -46,6 +47,7 @@ public class CustomSecurityConfig {
 		http.formLogin(config->{
 			config.loginPage("/api/member/login");
 			config.successHandler(new APILoginSuccessHandler());
+			config.failureHandler(new APILoginFailHandler());
 		});
 		
 		return http.build();
